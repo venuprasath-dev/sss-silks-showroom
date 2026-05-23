@@ -4,10 +4,10 @@ import { products, categories } from "@/data/products";
 import { ProductCard } from "@/components/site/ProductCard";
 import { Search } from "lucide-react";
 
-type Search = { cat?: string };
+type SearchParams = { cat?: string };
 
 export const Route = createFileRoute("/collections")({
-  validateSearch: (s: Record<string, unknown>): Search => ({
+  validateSearch: (s: Record<string, unknown>): SearchParams => ({
     cat: typeof s.cat === "string" ? s.cat : undefined,
   }),
   head: () => ({
